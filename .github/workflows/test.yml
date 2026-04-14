@@ -22,5 +22,10 @@ jobs:
     - name: Run tests
       run: pytest test_app.py -v
 
+    - name: Start Flask app
+      run: |
+          python app.py &
+          sleep 5
+
     - name: Curl
-      run: curl -f http://localhost:8080/api/hello
+      run: curl -f http://localhost:5000/api/hello
