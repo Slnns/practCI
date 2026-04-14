@@ -10,6 +10,5 @@ def test_hello_unit():
     with app.app_context():
         from app import hello
         response = hello()
-        # Response object имеет атрибуты, а не индексы
-        assert response.status_code == 200
-        assert response.json['message'] == 'Hello World'
+        assert response[1] == 200
+        assert response[0].json['message'] == 'Hello World'
